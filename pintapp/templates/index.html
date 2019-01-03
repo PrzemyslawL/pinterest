@@ -1,0 +1,15 @@
+{%  extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+    {% include 'form.html' %}
+    {% for photo in photos %}
+        <div class="pull-left">
+        <a href="/image/{{ photo.id }}">
+        <img width=300px height="200px" src="{{ photo.photo.url }}">
+        </a>
+        </div>
+    {% empty %}
+        Brak zdjęć
+    {% endfor %}
+{% endblock %}
